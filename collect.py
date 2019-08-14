@@ -4,8 +4,10 @@ def collect(file):
     '''
     import sys, os
 
+    f = open(file).read()
     nwchem_in = os.path.splitext(file)[1] == '.nw'
-    if nwchem_in:
+    nwchem_out = 'Northwest Computational Chemistry Package' in f
+    if nwchem_in or nwchem_out:
         from NWChemClass import NWChem
         d = NWChem(file)
     return d
