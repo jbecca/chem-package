@@ -1,13 +1,17 @@
 import unittest
+from collect import collect
 
-#class TestFileType(unittest.TestCase):
+class TestNWChemInputFiles(unittest.TestCase):
 
-   # def test_inputOrOutput(self):
-        #a user wants to manipulate information in a file, so first the file is supplied
-        #self.assertEqual
+    #a user wants to manipulate information in a file, so first the file is supplied
+    def setUp(self):
+       self.file = collect('./testfiles/test.nw') 
 
-    #def test_input(self):
-        #self.assertEqual('foo'.upper(), 'FOO')
+    def test_inputName(self):
+        self.assertEqual(self.file.name, './testfiles/test.nw')
+
+    def test_inputJobtype(self):
+        self.assertEqual(self.file.jobtype, 'NWChem')
 
 if __name__ == '__main__':
     unittest.main()
