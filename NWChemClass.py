@@ -12,4 +12,4 @@ class NWChem:
         nwchem_out = 'Northwest Computational Chemistry Package' in f
         if nwchem_in:
             from input_block import collect_input
-            collect_input(self, f)
+            collect_input(self, name)
