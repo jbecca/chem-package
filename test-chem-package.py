@@ -10,6 +10,7 @@ class TestNWChemInputFiles(unittest.TestCase):
         self.assertEqual(self.file.name, './testfiles/test.nw')
         self.assertEqual(self.file.jobtype, 'NWChem')
         self.assertEqual(self.file.title, 'dplot_dft')
+        self.assertEqual(self.file.calctype, set(['dplot', 'dft']))
 
 #class TestNWChemOutputFiles(unittest.TestCase):
 #    def setUp(self):

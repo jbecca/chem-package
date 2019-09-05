@@ -7,6 +7,7 @@ class NWChem:
         import os
         self.name = name
         self.jobtype = 'NWChem'
+        self.calctype = set()
         f = open(name).read()
         nwchem_in = os.path.splitext(name)[1] == '.nw'
         nwchem_out = 'Northwest Computational Chemistry Package' in f
