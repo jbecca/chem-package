@@ -12,6 +12,9 @@ class TestNWChemInputFiles(unittest.TestCase):
         self.assertEqual(self.file.title, 'dplot_dft')
         self.assertEqual(self.file.calctype, set(['dplot', 'dft']))
 
+    #def test_inputCoords(self):
+
+
 #class TestNWChemOutputFiles(unittest.TestCase):
 #    def setUp(self):
 #        self.file = collect('./testfiles/nwchem.out')
