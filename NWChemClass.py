@@ -17,3 +17,5 @@ class NWChem:
         if nwchem_out:
             from input_block import collect_input
             collect_input(self, name)
+            from nwchem_functions import collect_dipole
+            collect_dipole(self, name)
