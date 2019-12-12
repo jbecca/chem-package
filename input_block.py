@@ -6,7 +6,7 @@ def collect_input(self, name):
     l = open(name)
     for line in l:
         line = line.rstrip()
-        if 'start' in line:
+        if 'start ' in line and self.title == None:
             self.title = line.split(' ')[1]
         if 'task dplot' in line:
             self.calctype.add('dplot')

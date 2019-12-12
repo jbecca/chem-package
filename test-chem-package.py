@@ -15,11 +15,15 @@ class TestNWChemInputFiles(unittest.TestCase):
     #def test_inputCoords(self):
 
 
-#class TestNWChemOutputFiles(unittest.TestCase):
-#    def setUp(self):
-#        self.file = collect('./testfiles/nwchem.out')
-#    def test_outputProperties(self):
-#        self.assertEqual(self.file.name, './testfiles/nwchem.out')
+class TestNWChemOutputFiles(unittest.TestCase):
+    def setUp(self):
+        self.file = collect('./testfiles/nwchem.out')
+
+    def test_outputProperties(self):
+        self.assertEqual(self.file.name, './testfiles/nwchem.out')
+        self.assertEqual(self.file.jobtype, 'NWChem')
+        self.assertEqual(self.file.title, 'dplot_dft')
+        self.assertEqual(self.file.calctype, set(['dplot', 'dft']))
 
 if __name__ == '__main__':
     unittest.main()

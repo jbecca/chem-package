@@ -14,3 +14,6 @@ class NWChem:
         if nwchem_in:
             from input_block import collect_input
             collect_input(self, name)
+        if nwchem_out:
+            from input_block import collect_input
+            collect_input(self, name)
