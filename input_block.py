@@ -8,10 +8,14 @@ def collect_input(self, name):
         line = line.rstrip()
         if 'start ' in line and self.title == None:
             self.title = line.split(' ')[1]
-        if 'task dplot' in line:
+        elif 'task dplot' in line:
             self.calctype.add('dplot')
-        if 'task dft' in line:
+        elif 'task dft' in line:
             self.calctype.add('dft')
+        # stop reading line by line once end of echoed input block is found
+        elif 'Northwest Computational Chemistry Package' in line:
+            break
+
     l.close()
 
 
