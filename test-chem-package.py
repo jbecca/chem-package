@@ -24,9 +24,11 @@ class TestNWChemOutputFiles(unittest.TestCase):
         self.assertEqual(self.file.jobtype, 'NWChem')
         self.assertEqual(self.file.title, 'dplot_dft')
         self.assertEqual(self.file.calctype, set(['dplot', 'dft']))
-        self.assertEqual(self.file.dipole[0], 0.) 
-        self.assertEqual(self.file.dipole[1], 0.) 
-        self.assertEqual(self.file.dipole[2], 0.) 
+
+    def test_dipole(self):
+        self.assertEqual(self.file.dipole[0], 0.1) 
+        self.assertEqual(self.file.dipole[1], 0.2) 
+        self.assertEqual(self.file.dipole[2], 0.3) 
 
 if __name__ == '__main__':
     unittest.main()
