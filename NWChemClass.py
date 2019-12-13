@@ -8,9 +8,13 @@ class NWChem:
         self.name = name
         self.jobtype = 'NWChem'
         self.calctype = set()
-        f = open(name).read()
         nwchem_in = os.path.splitext(name)[1] == '.nw'
-        nwchem_out = 'Northwest Computational Chemistry Package' in f
+        with open(name) as f:
+            if 'Northwest Computational Chemistry Package' in f.read():
+                nwchem_out = True
+            else:
+                nwchem_out = False
+
         if nwchem_in:
             from input_block import collect_input
             collect_input(self, name)

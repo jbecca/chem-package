@@ -12,5 +12,6 @@ def collect_input(self, name):
             self.calctype.add('dplot')
         if 'task dft' in line:
             self.calctype.add('dft')
+    l.close()
 
 
