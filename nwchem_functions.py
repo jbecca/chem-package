@@ -29,3 +29,12 @@ def collect_output_prop(self, name):
             self.jobfinish = True
             self.walltime = templist[5].rstrip()
             self.walltime = self.walltime[:-1]
+
+def collect_energy(self, name):
+    l = open(name)
+    for line in l:
+        line = line.rstrip()
+        if 'Total DFT energy' in line:
+            tmpstring = list(filter(None, line.rstrip().split(' ')))
+            self.energy = float(tmpstring[4])
+    l.close()

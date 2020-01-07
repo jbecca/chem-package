@@ -12,9 +12,6 @@ class TestNWChemInputFiles(unittest.TestCase):
         self.assertEqual(self.file.title, 'dplot_dft')
         self.assertEqual(self.file.calctype, set(['dplot', 'dft']))
 
-    #def test_inputCoords(self):
-
-
 class TestNWChemOutputFiles(unittest.TestCase):
     def setUp(self):
         self.file = collect('./testfiles/nwchem.out')
@@ -31,6 +28,13 @@ class TestNWChemOutputFiles(unittest.TestCase):
         self.assertEqual(self.file.dipole[0], 0.1) 
         self.assertEqual(self.file.dipole[1], 0.2) 
         self.assertEqual(self.file.dipole[2], 0.3) 
+
+    def test_energy(self):
+        self.assertEqual(self.file.energy, -107.134934626831)
+
+class TestPlotting(unittest.TestCase):
+    def setUp(self):
+        self.file = collect('./testfiles/nwchem.out')
 
 if __name__ == '__main__':
     unittest.main()

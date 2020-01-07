@@ -25,3 +25,5 @@ class NWChem:
             collect_dipole(self, name)
             from nwchem_functions import collect_output_prop
             collect_output_prop(self, name)
+            from nwchem_functions import collect_energy
+            collect_energy(self, name)
